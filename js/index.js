@@ -18,6 +18,7 @@ const App = () => {
         <div className='text'>Nice blog post!</div>
         </div>
         </div>
-        </div>  
+        </div>
+        <d  
     );
 };
