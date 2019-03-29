@@ -1,29 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import faker from 'faker';
+import CommentDetail from './CommentDetail';
 const App = () => {
   return (
-    <div className="ui container comments"> 
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img alt="avatar" />  
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            Sam
-          </a>
-          <div className="metadata">
-            <span className="date">Today at 6:00PM</span>  
-          </div>
-          <div className="text"></div>
-        </div>    
-      </div>
-    </div>
-  );
-}
+     <div className="ui container comments">
+       
+       <CommentDetail 
+       author="Sam" 
+       timeAgo="Today at 4:45PM" 
+       text="Nice Blog Post!"
+       avatar={faker.image.avatar()}/>
+
+       <CommentDetail 
+       author="Alex" 
+       timeAgo="Today at 2:00AM" 
+       text="Nice Blog Post!"
+       avatar={faker.image.avatar()}/> 
+
+       <CommentDetail 
+       author="Jane" 
+       timeAgo="Yesterday at 5:00PM" 
+       text="Nice Blog Post!"
+       avatar={faker.image.avatar()}/> 
+
+
+     </div>
+    );
+};
 
 ReactDOM.render(<App />, document.querySelector('#root'));
 
-// http://semantic-ui.com let's install it! 
-// https://cdnjs.com/libraries/semantic-ui
-// https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css
+
+//when ever showing a component you need to show it with a jsx tag
+//comment detail would be considered a child of index.js the main 
